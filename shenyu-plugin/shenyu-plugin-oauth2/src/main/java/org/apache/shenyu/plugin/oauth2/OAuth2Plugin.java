@@ -31,7 +31,6 @@ import reactor.core.publisher.Mono;
  */
 @Slf4j
 public class OAuth2Plugin extends AbstractShenyuPlugin {
-
     @Override
     public int getOrder() {
         return PluginEnum.OAUTH2.getCode();
