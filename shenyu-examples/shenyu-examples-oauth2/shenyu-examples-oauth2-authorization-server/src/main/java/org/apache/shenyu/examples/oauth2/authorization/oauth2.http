@@ -1,0 +1,47 @@
+####authorization code mode
+
+### get code
+# chrome input
+# http://127.0.0.1:8178/oauth/authorize?client_id=shenyu&redirect_uri=https://dromara.org/zh/projects/soul/overview/&response_type=code&scope=read_userinfo
+# if need login, account is testUser, password is password
+# then OAuth Approval
+# then you will get a code with callback in uri
+
+### get token
+# !!!Pay attention to replace the code value!!!
+# Please write down access_token and refresh_token value from response
+POST http://localhost:8178/oauth/token
+Authorization: Basic shenyu password
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=authorization_code&redirect_uri=https://dromara.org/zh/projects/soul/overview/&code=QDvGp0
+
+### check token
+# !!!Pay attention to replace the token value
+POST http://localhost:8178/oauth/check_token
+Authorization: Basic shenyu password
+Content-Type: application/x-www-form-urlencoded
+
+token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsicmVzb3VyY2Utc2VydmVyIl0sInVzZXJfbmFtZSI6InRlc3RVc2VyIiwic2NvcGUiOlsicmVhZF91c2VyaW5mbyJdLCJleHAiOjE2MjIzODk2NjcsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiJkNjMyOWZhNS0xMDQxLTQ4N2UtODQwMi00ZGIxNzk0ODU5YjUiLCJjbGllbnRfaWQiOiJzaGVueXUifQ.k1MC118p2O0Bn9RPqcjDdIyBSGsHHnUR8-IAnYDq8Vs
+
+### refresh token
+# !!!Pay attention to replace the refresh_token value
+POST http://localhost:8178/oauth/token
+Authorization: Basic shenyu password
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=refresh_token&refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsicmVzb3VyY2Utc2VydmVyIl0sInVzZXJfbmFtZSI6InRlc3RVc2VyIiwic2NvcGUiOlsicmVhZF91c2VyaW5mbyJdLCJhdGkiOiI4YzNlYTcyNC03NjJkLTQxMjEtYjY0OS0wYjc4ZTI4YjU2MTMiLCJleHAiOjI2MjIzODY1ODksImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiJkNjI1ZGU3Ny1jNzliLTQxOWYtODEzMS1kYmJhOTJjZTFiNDMiLCJjbGllbnRfaWQiOiJzaGVueXUifQ.7rcYKFYS51HxUPkogz9-e1sGFTZyrdXU15uUsDgjw9c
+
+
+###-------------------------------------------------------------------------------------###
+
+####authorization password mode
+
+### get token
+POST http://localhost:8178/oauth/token
+Authorization: Basic shenyu password
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&username=testUser&password=password
+
+###
