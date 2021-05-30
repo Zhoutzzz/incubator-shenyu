@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-####authorization code mode
+#### authorization code mode
 
 ### get code
 # chrome input
@@ -50,7 +50,7 @@ grant_type=refresh_token&refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJh
 
 ###-------------------------------------------------------------------------------------###
 
-####authorization password mode
+#### authorization password mode
 
 ### get token
 POST http://localhost:8178/oauth/token
