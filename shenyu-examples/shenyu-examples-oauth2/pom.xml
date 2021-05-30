@@ -31,6 +31,5 @@
         <module>shenyu-examples-oauth2-authorization-server</module>
         <module>shenyu-examples-oauth2-resource-server</module>
     </modules>
-
-
+    
 </project>
